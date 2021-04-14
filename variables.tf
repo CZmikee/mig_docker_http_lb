@@ -13,18 +13,20 @@ variable "cidr_mapping" {
   }
 }
 
-variable "project" {
-  default = "sandbox-310617"
-}
-
-variable "creds" {
-  default = "sandbox-310617-f4044de768d7.json"
-}
-
 variable "region" {
   default = "europe-west1"
 }
 
 variable "zone" {
   default = "c"
+}
+
+
+
+variable "project" {
+  description = "Project where all parts should be created"
+}
+
+variable "creds" {
+  description = "Service file used for logging"
 }
