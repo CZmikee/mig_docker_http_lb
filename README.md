@@ -6,4 +6,4 @@ Terraform module that prepares separate env per variable environs (inside variab
  VMs are without ephemeral public IP but with cloud NAT access outside and IAP ssh access set and enabled on FW.
  Prod and Dev have separate CIDR ranges, additionals can be added if needed in the same fashion (in both vars environs and cidr_mapping)
 
-# Mandatory variables to be set: "project" (meant as project ID) and "creds" (meant as path to the service account json file used for the rest)
+### Mandatory variables to be set: "project" (meant as project ID) and "creds" (meant as path to the service account json file used for the rest)
