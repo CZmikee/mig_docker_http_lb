@@ -3,7 +3,6 @@ module "mig_template" {
   source     = "terraform-google-modules/vm/google//modules/instance_template"
   version    = "6.0.0"
   network    = google_compute_network.default.self_link
-//  network    = var.network_name
   subnetwork = google_compute_subnetwork.default.self_link
   machine_type = var.VMsize
   disk_size_gb = var.disk_size_gb
@@ -25,14 +24,11 @@ module "mig_template" {
 }
 
 module "mig" {
-//  for_each = var.environs
   source            = "terraform-google-modules/vm/google//modules/mig"
   version           = "6.2.0"
   instance_template = module.mig_template.self_link
   region            = var.region
   hostname          = var.mig_name
-//  hostname          = "managed-instance-group-${each.key}"
-//  target_size       = each.value
     target_size       = var.mig_size
     named_ports = [{
     name = "http",
