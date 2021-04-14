@@ -28,5 +28,5 @@ variable "project" {
 }
 
 variable "creds" {
-  description = "Service file used for logging"
+  description = "Path to a JSON Service file used for all operations"
 }
